@@ -42,25 +42,25 @@ static ImplementacionOperacion op = new ImplementacionOperacion();
                         break;
                     }
  
-                    System.out.print("Contrasena: ");
+                    System.out.print("Contraseña: ");
                     String contrasena = sc.nextLine().trim();
  
                     if (!op.validarContrasena(contrasena)) {
-                        System.out.println("La contrasena debe tener al menos 6 caracteres.");
+                        System.out.println("La contraseña debe tener al menos 6 caracteres.");
                         break;
                     }
  
                     EmpresaAgricola empresaLogin = op.iniciarSesion(op.getArreglo(), correo, contrasena);
  
                     if (empresaLogin == null) {
-                        System.out.println("Correo o contrasena incorrectos.");
+                        System.out.println("Correo o contraseña incorrectos.");
                         break;
                     }
  
                     System.out.println("Bienvenido, " + empresaLogin.getUsuario().getNombre());
                     System.out.println("Empresa: " + empresaLogin.getNombre());
  
-                    // ========== MENU FERTILIZANTES ==========
+                    
                     boolean cerrarSesion = false;
  
                     while (!cerrarSesion) {
@@ -80,7 +80,6 @@ static ImplementacionOperacion op = new ImplementacionOperacion();
  
                             case "1": {
                                 System.out.println("\n-- Agregar Fertilizante --");
-                                System.out.println("El ID se generara automaticamente.");
  
                                 System.out.print("Nombre: ");
                                 String nombre = sc.nextLine().trim();
@@ -289,12 +288,12 @@ static ImplementacionOperacion op = new ImplementacionOperacion();
                     String anio = "";
                     boolean anioValido = false;
                     while (!anioValido) {
-                        System.out.print("Anio de fundacion (1900-2025): ");
+                        System.out.print("Año de fundacion (1900-2025): ");
                         anio = sc.nextLine().trim();
                         if (op.validarAniofundacion(anio)) {
                             anioValido = true;
                         } else {
-                            System.out.println("Anio invalido. Ingrese un valor entre 1900 y 2025.");
+                            System.out.println("Año invalido. Ingrese un valor entre 1900 y 2025.");
                         }
                     }
  
@@ -322,12 +321,12 @@ static ImplementacionOperacion op = new ImplementacionOperacion();
                     String contrasenaReg = "";
                     boolean contrasenaValida = false;
                     while (!contrasenaValida) {
-                        System.out.print("Contrasena (minimo 6 caracteres): ");
+                        System.out.print("Contraseña (minimo 6 caracteres): ");
                         contrasenaReg = sc.nextLine().trim();
                         if (op.validarContrasena(contrasenaReg)) {
                             contrasenaValida = true;
                         } else {
-                            System.out.println("La contrasena debe tener al menos 6 caracteres.");
+                            System.out.println("La contraseña debe tener al menos 6 caracteres.");
                         }
                     }
  

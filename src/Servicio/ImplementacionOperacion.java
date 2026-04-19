@@ -24,8 +24,6 @@ private ArrayList<EmpresaAgricola> arreglo;
     public ArrayList<EmpresaAgricola> getArreglo() { return arreglo; }
     public void setArreglo(ArrayList<EmpresaAgricola> arreglo) { this.arreglo = arreglo; }
  
-    // ==================== CRUD ====================
- 
     @Override
     public String crear(EmpresaAgricola a, Fertilizante f) {
         try {
@@ -75,8 +73,6 @@ private ArrayList<EmpresaAgricola> arreglo;
         return "No se encontro el fertilizante con id '" + id + "'.";
     }
  
-    // ==================== ARCHIVO ====================
- 
     @Override
     public String Serializar(ArrayList<EmpresaAgricola> empresaAgricola, String path, String name) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(path + "/" + name))) {
@@ -97,7 +93,6 @@ private ArrayList<EmpresaAgricola> arreglo;
         }
     }
  
-    // ==================== VALIDACION ====================
  
     @Override
     public boolean validarTexto(String valor) {
@@ -150,8 +145,6 @@ private ArrayList<EmpresaAgricola> arreglo;
         return valor.matches("\\d{2}/\\d{2}/\\d{4}");
     }
  
-    // ==================== GENERACION DE IDS ====================
- 
     @Override
     public String generarIdUsuario(ArrayList<EmpresaAgricola> arreglo) {
         return "U" + (arreglo.size() + 1);
@@ -166,8 +159,6 @@ private ArrayList<EmpresaAgricola> arreglo;
     public String generarIdFertilizante(EmpresaAgricola a) {
         return "F" + (a.getFertilizante().size() + 1);
     }
- 
-    // ==================== SESION ====================
  
     @Override
     public EmpresaAgricola iniciarSesion(ArrayList<EmpresaAgricola> arreglo, String correo, String contrasena) {
